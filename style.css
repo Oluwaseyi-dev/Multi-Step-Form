@@ -20,7 +20,7 @@ body{
 }
 
 aside{
-    background-image: url(./assets/images/bg-sidebar-mobile.svg);
+    background-image: url(./multi-step-form-main/assets/images/bg-sidebar-mobile.svg);
     background-repeat: no-repeat;
     background-size: cover;
     grid-area: aside;
@@ -390,7 +390,7 @@ footer{
         padding: 3rem;
     }
     aside{
-        background-image: url(./assets/images/bg-sidebar-desktop.svg);
+        background-image: url(./multi-step-form-main/assets/images/bg-sidebar-desktop.svg);
         background-repeat: no-repeat;
         background-size: contain;
         grid-area: aside;
