@@ -1,0 +1,507 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    height: 100vh;
+    display: grid;
+    grid-template-areas: 
+    'aside'
+    'main'
+    'footer'
+    ;
+    grid-template-rows: 1fr 2.6fr 0.4fr;
+    font-family: 'Ubuntu', sans-serif;
+}
+.tab {
+    display: none;
+}
+
+aside{
+    background-image: url(./assets/images/bg-sidebar-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-area: aside;
+}
+ol{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    margin-top: 35px;
+    gap: 0.8rem;
+}
+li {
+    height: 35px;
+    width: 35px;
+    margin: 0 2px;
+    border: 1px solid white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 32px;
+    color: white;
+    /* opacity: 0.5; */
+    cursor: pointer;
+  }
+li a{
+    color: white;
+}
+li.step.active{
+    color: hsl(213, 96%, 18%);
+    background-color: hsl(206, 94%, 87%);
+}
+.step-desc{
+    display: none;
+}
+
+
+main{
+    background-color: hsl(217, 100%, 97%);
+    display: flex;
+    justify-content: center;
+    grid-area: main;
+}
+#regForm{
+    position: absolute;
+    margin: -4.2rem 1rem 1rem;
+    padding: 1.5rem;
+    padding-bottom: 2rem;
+    border-radius: 12px;
+    background-color: white;
+}
+header h2{
+    font-weight: 700;
+    font-size: 26px;
+    color:hsl(213, 96%, 18%);
+    padding:  0;
+}
+header .header-info{
+    line-height: 24px;
+    padding-right: 40px;
+    padding-top: 13px;
+    color: hsl(231, 11%, 63%);
+}
+.primary-info{
+    padding-top: 13px;
+}
+label{
+    font-weight: 500;
+    font-size: 13.5px;
+    color:hsl(213, 96%, 18%);
+}
+input {
+    padding: 10px;
+    width: 100%;
+    font-size: 17px;
+    border: 1px solid hsl(229, 24%, 87%);
+    border-radius: 5px;
+}
+input.invalid {
+    background-color: hsl(217, 100%, 97%);
+}
+::placeholder{
+    color: hsl(231, 11%, 63%);
+    font-weight: 500;
+}
+
+
+.plans{
+    display: flex;
+    height: 80px;
+    gap: 1rem;
+    border: 2px solid hsl(229, 24%, 87%);
+    border-radius: 8px;
+    margin-top: 14px;
+    transition: all 250ms ease-out;
+    cursor: pointer;
+    padding-left: 1rem;
+}
+.plans.selected{
+    border: 3px solid hsl(213, 96%, 18%);
+    background-color: hsl(217, 100%, 97%);
+}
+.plans:hover{
+    border: 3px solid hsl(213, 96%, 18%);
+    background-color: hsl(217, 100%, 97%);
+}
+.plans img{
+    width: 40px;
+}
+.plan p{
+    color: hsl(213, 96%, 18%);
+    font-weight: 500;
+    padding-top: 13px;
+}
+.plan .monthly-price{
+    display: none;
+    color: hsl(231, 11%, 63%);
+    padding-top: 6px;
+    font-size: 14px;
+}
+.plan .yearly-price{
+    display: none;
+    padding-top: 5px;
+    font-size: 14px;
+    color: hsl(231, 11%, 63%);
+}
+.free {
+    display: none;
+    padding-top: 6px !important;
+    font-size: 10px;
+    color: hsl(213, 96%, 18%);
+}
+.checkbox-alias{
+    display: inline-block;
+  z-index: 1;
+  position: relative;
+
+}
+.slide-btn{
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: hsl(231, 100%, 99%);
+    height: 40px;
+}
+.yrmo{
+    padding-top: 0;
+}
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 45px;
+    height: 22px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: hsl(213, 96%, 18%);
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+    right: -4px;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+
+
+
+.add-ons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid hsl(229, 24%, 87%);
+    margin-top: 1rem;
+    padding: 1rem;
+    height: 80px;
+    border-radius: 8px;
+    transition: all 250ms ease-out;
+}
+.add-on{
+    padding-left: 1rem;
+    width: 70%;
+}
+.add-ons input[type="checkbox"] {
+    width: 25px;
+    height: 25px;
+    accent-color: hsl(243, 100%, 62%);
+    cursor: pointer;
+}
+.add-ons.checked{
+    border: 2px solid hsl(243, 100%, 62%);
+    background-color: hsl(217, 100%, 97%);
+}
+.add-ons:hover{
+    border: 2px solid hsl(243, 100%, 62%);
+    background-color: hsl(217, 100%, 97%);
+}
+
+.add-on-type{
+    font-size: 15px;
+    font-weight: 700;
+    color: hsl(213, 96%, 18%);
+}
+.add-on-expo{
+    font-size: 12px;
+    color: hsl(231, 11%, 63%);
+    padding-top: 4px;
+}
+.add-ons .monthly-price, .yearly-price{
+    font-size: 14px;
+    color: hsl(243, 100%, 62%);
+}
+#add-onss div{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.confirm{
+    background-color: hsl(231, 100%, 99%);
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 10px;
+}
+#planss{
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    color: hsl(213, 96%, 18%);
+}
+#changer a{
+    color: hsl(231, 11%, 63%);
+}
+hr{
+    border: none; 
+    border-top: 1px solid hsl(231, 11%, 63%); 
+    opacity: 0.3;
+}
+.total{
+    margin: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+.addOnType{
+    color: hsl(231, 11%, 63%);
+}
+.myPrice{
+    color: hsl(213, 96%, 18%);
+    font-weight: 500;
+}
+#target7{
+    color: hsl(231, 11%, 63%);
+}
+#result{
+    color: hsl(243, 100%, 62%);
+    font-size: 18px;
+    font-weight: 700;
+}
+
+
+.end{
+    display: none;
+    padding: 1rem;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+} 
+.end header{
+    margin: 1rem;
+    font-weight: 700;
+}
+.end p{
+    color: hsl(231, 11%, 63%);
+    line-height: 25px;
+    font-weight: 400;
+}
+.end img{
+    width: 55px;
+}
+
+footer{
+    grid-area: footer;
+}
+.btn{
+    margin-top: 11px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+#prevBtn{
+    float: left;
+    cursor: pointer;
+    color: hsl(231, 11%, 63%);
+    background-color: white;
+    padding: 15px 18px;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+  }
+  
+#nextBtn{
+    float: right;
+    cursor: pointer;
+    color: white;
+    background-color: hsl(213, 96%, 18%);
+    padding: 15px 18px;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+  @media screen and (min-width: 875px) {
+    body{
+        width: 150vh;
+        height: 95vh;
+        display: grid;
+        grid-template-areas: 
+        'aside main'
+        'aside footer'
+        ;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: 5fr 0.5fr;
+        font-family: 'Ubuntu', sans-serif;
+        margin: 1rem;
+        margin-left: 14rem;
+        padding: 3rem;
+    }
+    aside{
+        background-image: url(./assets/images/bg-sidebar-desktop.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        grid-area: aside;
+
+    }
+    ol{
+        display: flex;
+        flex-direction: column; 
+        margin-left: 2rem;
+        gap: 2rem;
+
+    }
+    ol div{
+        display: flex;
+    }
+    li {
+        height: 35px;
+        width: 35px;
+        margin: 0 2px;
+        border: 1px solid white;
+        border-radius: 50%;
+        text-align: center;
+        color: white;
+        /* opacity: 0.5; */
+        cursor: pointer;
+      }
+    .step-desc{
+        display: block;
+        margin-top: 0.2rem;
+        margin-left: 1rem;
+        color: white;
+        line-height: 18px;
+    }
+    .step-what{
+        font-size: 12px;
+        opacity: 0.6;
+    }
+    .step-this{
+        font-weight: 500;
+    }
+    main{
+        background-color: white;
+        display: flex;
+        justify-content: flex-start;
+        margin: 2rem;
+        grid-area: main;
+        width: 90%;
+        padding-left: 1rem;
+    }
+    #regForm{
+        position: absolute;
+        margin: 0;
+        padding: 1.5rem;
+        padding-bottom: 2rem;
+        border-radius: 12px;
+        background-color: white;
+        
+    }
+    header .header-info{
+        line-height: 24px;
+        padding-right: 40px;
+        padding-top: 13px;
+        color: hsl(231, 11%, 63%);
+        margin-bottom: 0.8rem;
+    }
+    .primary-info{
+        padding-bottom: 25px;
+    }
+    input {
+        margin-top: 7px;
+    }
+    #change div{
+        display: flex;
+        gap: 1rem;
+    }
+    .plans{
+        display: block;
+        height: 170px;
+        width: 140px;
+        border-radius: 8px;
+        padding-top: 20px;
+    }
+    .plan{
+        display: block !important;
+        margin-top: 1.5rem;
+    }
+    .slide-btn{
+        margin-top: 2rem;
+    }
+    .add-ons{
+        width: 450px;
+    }
+    .confirm{
+        width: 450px;
+    }
+    .end{
+        width: 470px;
+        margin-top: 11rem;
+    }
+    footer{
+        grid-area: footer;
+        position: relative;
+    }
+    .btn{
+        margin-top: 11px;
+        margin-right: 20px;
+        margin-left: 40px;
+        width: 70%;
+    }
+
+    #nextBtn{
+        padding: 14px 22px;
+    }
+  }
