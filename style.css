@@ -125,9 +125,6 @@ input.invalid {
     border: 3px solid hsl(213, 96%, 18%);
     background-color: hsl(217, 100%, 97%);
 }
-.plans img{
-    width: 40px;
-}
 .plan p{
     color: hsl(213, 96%, 18%);
     font-weight: 500;
@@ -338,9 +335,6 @@ hr{
     color: hsl(231, 11%, 63%);
     line-height: 25px;
     font-weight: 400;
-}
-.end img{
-    width: 55px;
 }
 
 footer{
