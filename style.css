@@ -76,6 +76,11 @@ header h2{
     color:hsl(213, 96%, 18%);
     padding:  0;
 }
+#err{
+    display: none;
+    color:hsl(213, 96%, 18%);
+    font-size: 14px;
+}
 header .header-info{
     line-height: 24px;
     padding-right: 40px;
@@ -122,7 +127,6 @@ input.invalid {
     background-color: hsl(217, 100%, 97%);
 }
 .plans:hover{
-    border: 3px solid hsl(213, 96%, 18%);
     background-color: hsl(217, 100%, 97%);
 }
 .plan p{
@@ -253,7 +257,6 @@ input.invalid {
     background-color: hsl(217, 100%, 97%);
 }
 .add-ons:hover{
-    border: 2px solid hsl(243, 100%, 62%);
     background-color: hsl(217, 100%, 97%);
 }
 

@@ -64,6 +64,7 @@ function showTab(n) {
       if (y[i].value == "") {
         // add an "invalid" class to the field:
         y[i].className += " invalid";
+        document.getElementById('err').style.display = "block";
         // and set the current valid status to false:
         valid = false;
       }
