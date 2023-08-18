@@ -115,6 +115,7 @@ input.invalid {
     display: flex;
     height: 80px;
     gap: 1rem;
+    padding-top: 15px;
     border: 2px solid hsl(229, 24%, 87%);
     border-radius: 8px;
     margin-top: 14px;
@@ -128,6 +129,11 @@ input.invalid {
 }
 .plans:hover{
     background-color: hsl(217, 100%, 97%);
+}
+.plan h3{
+    font-weight: 500;
+
+    font-size: 16px;
 }
 .plan p{
     color: hsl(213, 96%, 18%);
@@ -391,17 +397,22 @@ footer{
         background-repeat: no-repeat;
         background-size: contain;
         grid-area: aside;
-
+        display: flex;
+    }
+    aside div{
+        margin-top: 2rem;
+        gap: 2rem;
     }
     ol{
         display: flex;
         flex-direction: column; 
+        justify-content: start;
         margin-left: 2rem;
         gap: 2rem;
 
     }
     ol div{
-        display: flex;
+
     }
     li {
         height: 35px;
